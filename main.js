@@ -64,7 +64,7 @@ function renderArray(array) {
     } else {
       let newA = document.createElement("a");
       newA.textContent = "Watch now";
-      newA.href = `https://www.imdb.com/title/${item.imdbID}`;
+      newA.href = `https://www.youtube.com/watch?v=${item.ytid}`;
       newH3.textContent = item.Title;
 
       newLi.appendChild(newImg);
@@ -73,11 +73,11 @@ function renderArray(array) {
       newLi.appendChild(newA);
       newLi.style =
         "display:flex;padding:0px; flex-direction:column; justify-content:space-between; align-items: center;max-width:300px;cursor: pointer;";
-      newImg.src = item.Images;
+      newImg.src =`https://img.youtube.com/vi/${item.ytid}/mqdefault.jpg;`
       newLi.classList.add("item");
       newImg.style = "height: 180px;object-fit:cover;";
       newImg.setAttribute("alt", "movie");
-      newh5.innerHTML = `${item.Year} <br>${item.Genre} <br>${item.imdbRating}`;
+      newh5.innerHTML = `${item.movie_year} <br>${item.imdb_rating}`;
       newh5.style = "text-align: center;";
     }
 
